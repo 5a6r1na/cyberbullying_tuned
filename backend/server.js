@@ -20,9 +20,9 @@ app.post("/api/getLLMResponse", (req, res) => {
   const scriptPath = path.join(__dirname, "model/run.py");
   const modelDir = path.join(__dirname, "model");
 
-  const py = spawn("python", [scriptPath, message, age, ethnicity], {
+  const py = spawn("python3", [scriptPath, message, age, ethnicity], {
     cwd: modelDir,
-    env: process.env
+    env: process.env,
   });
 
   let output = "";
